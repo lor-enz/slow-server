@@ -1,5 +1,5 @@
 [package]
-name = "slow-http-server"
+name = "turtle-server"
 version = "0.1.0"
 authors = ["git@lorenz.kiwi"]
 edition = "2018"

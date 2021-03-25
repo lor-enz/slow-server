@@ -1,8 +1,8 @@
+use chrono::{Timelike, Utc};
 use clap::{App, Arg};
 use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
 use std::{thread, time};
-use chrono::{Timelike, Utc};
 
 fn handle_read(mut stream: &TcpStream) {
     let mut buf = [0u8; 4096];
@@ -83,7 +83,7 @@ fn main() {
 
     let listener = TcpListener::bind(format!("127.0.0.1:{}", port)).unwrap();
     println!(
-        "\'{}\' is listening for connections on {} and will respond with delay of {} seconds.",
+        "\'{}\' is listening for connections on {} and will respond with delay of {} milliseconds.",
         name,
         format!("127.0.0.1:{}", port),
         slowness
@@ -94,7 +94,7 @@ fn main() {
         match stream {
             Ok(stream) => {
                 // let's make things slow
-                thread::sleep(time::Duration::from_secs(slowness));
+                thread::sleep(time::Duration::from_millis(slowness));
                 thread::spawn(move || handle_client(stream, name));
             }
             Err(e) => {
