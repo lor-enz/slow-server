@@ -1,4 +1,4 @@
-# turtle-server
+# slow-server
 An intentionally slow http server. Useful for testing purposes.
 It also focuses on one client at a time. No parallel waiting, it's like a queue.
 
@@ -15,14 +15,14 @@ The HTTP response looks something like this: ```'alpha' sent you this message at
 Grab a release build and run it like this:
 
 ```
-./turtle-server --name alpha --port 8080 --slowness 5000
+./slow-server --name alpha --port 8080 --slowness 5000
 ```
 This runs it on port ```8080```. The reponse time will be ```5``` seconds and the http response will say the server is called ```alpha```
 Adjust the values to your needs.
 
 If a low number of keystrokes matters, try it like this.
 ```
-./turtle-server --n alpha --p 8080 --s 5000
+./slow-server --n alpha --p 8080 --s 5000
 ```
 ### Source
 
