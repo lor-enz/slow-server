@@ -17,7 +17,7 @@ Grab a release build and run it like this:
 ```
 ./slow-server --name alpha --port 8080 --slowness 5000
 ```
-This runs it on port ```8080```. The reponse time will be ```5``` seconds and the http response will say the server is called ```alpha```
+This runs it on port ```8080```. The response time will be ```5``` seconds and the http response will say the server is called ```alpha```
 Adjust the values to your needs.
 
 If a low number of keystrokes matters, try it like this.
